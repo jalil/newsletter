@@ -2,6 +2,7 @@
 name = "newsletter"
 version = "0.1.0"
 edition = "2021"
+authors = ["Jalil Seidu"]
 
 [lib]
 path = "src/lib.rs"
