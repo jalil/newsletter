@@ -7,7 +7,6 @@ COPY . .
 ENV SQLX_OFFLINE true
 RUN cargo build --release 
 
-
 # Runtime stage
 FROM debian:bullseye-slim AS runtime
 WORKDIR /app
@@ -20,4 +19,4 @@ RUN apt-get update -y \
 COPY --from=builder /app/target/release/newsletter newsletter
 COPY configuration configuration
 ENV APP_ENVIRONMENT production
-ENTRYPOINT ["./target/release/newsletter"]
+ENTRYPOINT ["./newsletter"]
